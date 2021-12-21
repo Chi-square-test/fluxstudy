@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.fluxstudy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.9'
+	implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.9'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+	implementation group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.32'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.17.0'
+	implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.0'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+}
+
+test {
+	useJUnitPlatform()
+}
