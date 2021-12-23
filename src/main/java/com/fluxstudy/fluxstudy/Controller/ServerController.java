@@ -15,12 +15,12 @@ public class ServerController {
     private KitchenService kitchenService;
 
     @GetMapping(value = "/server",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    Flux<Dish> serveDishes(){
+    public Flux<Dish> serveDishes(){
         return kitchenService.getDishes();
     }
 
     @GetMapping(value = "/servered-dishes",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    Flux<Dish> deliverDishes(){
+    public Flux<Dish> deliverDishes(){
         return kitchenService.getDishes() //기존 객체가 아닌 새로운 객체를 생성하여 내용 변경
                 .map(Dish::deliever); //람다식 어질어질
     }
