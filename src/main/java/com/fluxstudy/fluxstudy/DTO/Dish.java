@@ -16,6 +16,14 @@ public class Dish {
     public boolean isDelivered(){
         return delivered;
     }
+
+    public static Dish deliever(Dish dish){
+        return Dish.builder()
+                .description(dish.getDescription())
+                .delivered(true)
+                .build();
+    }
+
     @Override
     public String toString(){
         return "Dish{"+//
@@ -23,5 +31,7 @@ public class Dish {
         ", delivered="+delivered+//
         '}';
     }
+
+
 
 }
